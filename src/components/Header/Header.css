@@ -1,0 +1,51 @@
+header {
+    height: 200px;
+}
+
+header h1 {
+    text-align: center;
+    color: #ffb637;
+    margin: 3rem 0;
+
+}
+
+nav {
+    display: flex;
+    height: 6rem;
+
+    align-items: center;
+
+}
+
+nav>img {
+    height: 100%;
+    margin-left: 10px;
+    border-radius: 7rem;
+
+
+}
+
+img {
+    width: 6%;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    align-items: center;
+}
+
+ul li a {
+    color: #f1c882d6;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+ul li a:hover {
+    cursor: pointer;
+
+
+    color: #fca819;
+}
