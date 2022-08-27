@@ -1,8 +1,8 @@
-const Login = () =>{
-    return ( 
-        <div>
-            Login 
-        </div>
+const Login = () => {
+    return (
+        <section>
+            Login
+        </section>
     )
 }
 export default Login 
