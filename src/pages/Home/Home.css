@@ -1,0 +1,40 @@
+.home{
+    display: flex;
+    flex-direction: row; 
+    
+     height: 50vh;
+    margin-bottom: 7rem;
+    
+}
+.home>img{
+    height: 45vh;
+    width: 30%;
+    box-shadow: 15px 15px 15px rgba(245, 222, 179, 0.137);
+}
+
+.info {
+    width: 70%;
+      display: flex;
+     flex-direction: column;
+}
+
+.info >h2{
+    margin-left: 40%;
+    font-size: 1.5rem;
+    color: #ffb637;
+    margin-bottom: 3rem;
+}
+
+.info>p{
+    color: rgb(247, 245, 245);
+    margin:2rem;
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+    font-family: monospace;
+    
+}
+
+.info a{
+    margin-left: 40%;
+    font-size: 1.2rem;
+}

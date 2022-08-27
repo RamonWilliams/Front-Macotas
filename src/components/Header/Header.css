@@ -1,5 +1,6 @@
 header {
     height: 200px;
+    margin-bottom: 4rem;
 }
 
 header h1 {
@@ -11,7 +12,7 @@ header h1 {
 
 nav {
     display: flex;
-    height: 6rem;
+    height: 7rem;
 
     align-items: center;
 
@@ -36,16 +37,3 @@ ul {
     align-items: center;
 }
 
-ul li a {
-    color: #f1c882d6;
-    text-transform: uppercase;
-    font-weight: bold;
-
-}
-
-ul li a:hover {
-    cursor: pointer;
-
-
-    color: #fca819;
-}

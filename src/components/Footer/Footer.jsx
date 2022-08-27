@@ -1,6 +1,10 @@
+import "./Footer.css"
+
 const Footer = () => {
     return (
-        <div>footer</div>
+        <footer>
+            <p>Hecho con 💓 de Lissy y Ramón</p>
+        </footer>
     )
 }
 
