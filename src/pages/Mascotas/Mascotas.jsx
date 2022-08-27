@@ -2,14 +2,17 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
+import MascotaCard from "../../components/MascotaCard/MascotaCard";
 import { API } from "../../services/API";
+import "./Mascotas.css"
 
 
 const Mascotas = () => {
     const [allMascotas, setAllMascotas] = useState([]);
 
     const getAllMascotas = async () => {
-        API.get("/mascotas").then((restMascotas) => {
+        API.get("/mascota").then((restMascotas) => {
+            console.log(restMascotas)
             setAllMascotas(restMascotas.data.mascotas)
         });
     };
@@ -21,18 +24,16 @@ const Mascotas = () => {
 
 
     return (
+        <> <div className="titulo-mascota"><h2>Mascotas</h2></div>
 
-        <section>
-            <h2>Mascotas</h2>
 
-            <div>
+        <section className="main">
+            <div className="gallery">
+        {allMascotas.length?allMascotas.map((mascota)=><MascotaCard mascota={mascota} key={mascota._id}/>):<p>Loading Mascota... </p>}
+           
+        </div>
 
-                {allMascotas.length > 0 ? allMascotas.map((mascota) => { mascota.name }) :
-                    <p>Loading Mascotas</p>}
-
-            </div>
-
-        </section>
+        </section></>
     )
 }
 

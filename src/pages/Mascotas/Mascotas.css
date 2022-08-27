@@ -1,0 +1,23 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+.main .gallery{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    color:  #ffb637;
+    gap: 2rem;
+}
+.titulo-mascota h2{
+    color:   #ffb637;
+    margin-bottom: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
