@@ -45,7 +45,7 @@ const Mascotas = () => {
                 {allMascotas.length ? setFilteredMascotas.map((mascota) => <MascotaCard mascota={mascota} key={mascota._id} />) : <p>Loading Mascota... </p>}
 
             </div>
-            {!allMascotas.length ? <p>Mascota not found</p> : <p>null</p>}
+            {!setFilteredMascotas.length ? <p>Mascota not found</p> : <p>null</p>}
 
 
         </section>
