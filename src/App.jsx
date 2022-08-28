@@ -8,9 +8,11 @@ import NewMascota from "./pages/NewMascota/NewMascota";
 import EditMascota from "./pages/EditMascota/EditMascota";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
+import { JwtContextProvider } from "./context/jwtContext";
 
 const App = () => {
   return(
+    <JwtContextProvider>
    <div>
      <Router>
        <Header />
@@ -33,6 +35,7 @@ const App = () => {
      </Router>
 
    </div>
+   </JwtContextProvider>
 
 
   )
