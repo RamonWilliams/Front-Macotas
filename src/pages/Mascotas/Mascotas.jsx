@@ -15,7 +15,8 @@ const Mascotas = () => {
     const setFilteredMascotas = allMascotas.filter((mascota) =>
         mascota.petname.toLowerCase().includes(filterWord) ||
         mascota.type.toLowerCase().includes(filterWord) ||
-        mascota.nickname.toLowerCase().includes(filterWord)
+        mascota.nickname.toLowerCase().includes(filterWord) ||
+        mascota.description.toLowerCase().includes(filterWord)
 
     )
 
