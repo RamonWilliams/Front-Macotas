@@ -46,7 +46,7 @@ const Mascotas = () => {
            
         </div>
            
-           {!allMascotas.length?<p>mascotas not found</p>: null}
+      
 
         </section> 
     )
