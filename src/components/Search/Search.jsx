@@ -1,8 +1,10 @@
-const Search = () => {
+import "./Search.css"
+
+
+const Search = ({setFilterWord}) => {
     return (
-        <div>
-            Search
-        </div>
+        
+     <input type="text" id="search" className="buscador" onChange={()=> setFilterWord(search.value.toLowerCase()) } placeholder=   "Search pet" />
     )
 }
 
