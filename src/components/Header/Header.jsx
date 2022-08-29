@@ -3,13 +3,6 @@ import { JwtContext } from "../../context/jwtContext"
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css"
 
-
-
-
-
-
-
-
 const Header = () => {
     const { mascota, logout } = useContext(JwtContext);
     let navigate = useNavigate();

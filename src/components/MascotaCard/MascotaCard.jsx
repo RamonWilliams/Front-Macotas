@@ -44,11 +44,7 @@ const MascotaCard = ({ mascota }) => {
 
             }
         })
-
-
-
-
-    };
+        };
 
 
     const editMascota = (mascota) => {
