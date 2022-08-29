@@ -24,10 +24,12 @@ body {
     background-color: #1e2336;
 }
 
-h1 h2 h3 {
+h1,h2 {
     color: #ffb637;
 }
-
+h2{
+    font-size: 2rem;
+}
 p {
     color: #ffb637;
 }
@@ -42,4 +44,22 @@ p {
  a:hover {
     cursor: pointer;
     color: #fca819;
+}
+input{
+    width: 16rem;
+    font-size: 16px;
+}
+label{
+    color: rgb(234, 237, 240);
+    font-size: 1.3rem;
+}
+button{
+    background: transparent;
+    color: rgb(24, 23, 21);
+    font-size: 1.3rem;
+    background-color: wheat;
+    width: 6rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
 }

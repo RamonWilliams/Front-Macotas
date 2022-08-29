@@ -30,22 +30,21 @@ const Header = () => {
                     ) : null}
                 </ul>
                 <div className="control">
-                    {mascota ? (
-                        <>
-                            <p>Welcome </p>
-                            {mascota.image !== "undefined" ? (
+                    {mascota ? (  
+                            <>                           
+                            {mascota.image !== "undefined" ? (                                
                                 <img src={mascota?.image} alt="Mascota Image" />
-                            ) : null}
+                                ) : null}
 
-                            <button onClick={() => logout() & navigate("/login")}>Logout</button>
-                        </>
+                            <button onClick={() => logout() & navigate("/")}>Logout</button>
+                            </>
                     ) : (
-                        <ul>
+                        <ul className="botones">
                             <li>
-                                <Link to="/login">Login</Link>
+                               <button> <Link to="/login">Login</Link></button>
                             </li>
                             <li>
-                                <Link to="/register">Register</Link>
+                                <button className="boton">  <Link to="/register">Register</Link></button>
                             </li>
                         </ul>
                     )}

@@ -1,6 +1,7 @@
 
 import { useState, createContext } from "react";
 
+
 export const JwtContext = createContext();
 
 
@@ -8,7 +9,7 @@ export const JwtContext = createContext();
 
 // esta función intenta que el valor inicial de jwt sea si encuentra algo en el token y si no me devuelve null
 export const JwtContextProvider = ({ children }) => {
-
+   
 
 
     const [jwt, setJwt] = useState(() => {
@@ -36,6 +37,7 @@ export const JwtContextProvider = ({ children }) => {
         setJwt(null);
         localStorage.removeItem("mascota");
         localStorage.removeItem("token");
+        
 
     }
 
