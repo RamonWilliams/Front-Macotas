@@ -1,6 +1,6 @@
 
-
 import { useState, createContext } from "react";
+
 export const JwtContext = createContext();
 
 
@@ -8,6 +8,9 @@ export const JwtContext = createContext();
 
 // esta función intenta que el valor inicial de jwt sea si encuentra algo en el token y si no me devuelve null
 export const JwtContextProvider = ({ children }) => {
+
+
+
     const [jwt, setJwt] = useState(() => {
         const savedJwt = localStorage.getItem("token");
         return savedJwt || null;
@@ -21,7 +24,9 @@ export const JwtContextProvider = ({ children }) => {
         const initialValue = JSON.parse(savedMascota);
         return initialValue || null
 
-    }) 
+    })
+
+    const [editingMascota, setEditingMascota] = useState({});
 
 
     // esta función se carga todos los estados y todo lo que haya en el almacenanmiento de la memoria del navegador y se 
@@ -31,12 +36,17 @@ export const JwtContextProvider = ({ children }) => {
         setJwt(null);
         localStorage.removeItem("mascota");
         localStorage.removeItem("token");
+
     }
 
+
+
+
     return (
-    <JwtContext.Provider value={{ jwt, setJwt, mascota, setMascota, logout }}>
-        {children}
-    </JwtContext.Provider>
+        <JwtContext.Provider value={{ jwt, setJwt, mascota, setMascota, logout, editingMascota, setEditingMascota }}>
+            {children}
+        </JwtContext.Provider>
     )
 };
 
+export default JwtContext

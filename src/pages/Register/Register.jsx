@@ -2,6 +2,7 @@
 import { useForm } from "react-hook-form";
 import { API } from "../../services/API";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
@@ -20,6 +21,7 @@ const Register = () => {
             console.log(res)
             if (res) {
                 navigate("/login");
+                Swal.fire("Bienvenido, ya te puedes loguear con tus datos")
             }
 
 
@@ -27,29 +29,30 @@ const Register = () => {
     };
 
     return (
+        <section className="registro">
+            <form onSubmit={handleSubmit(formSubmit)}>
+                <label htmlFor="petname">Petname</label>
+                <input type="text" id="petname" name="petname"  {...register("petname")} />
 
-        <form onSubmit={handleSubmit(formSubmit)}>
-            <label htmlFor="petname">Petname</label>
-            <input type="text" id="petname" name="petname"  {...register("petname")} />
+                <label htmlFor="nickname">Nickname</label>
+                <input type="text" id="nickname" name="nickname" {...register("nickname")} />
 
-            <label htmlFor="nickname">Nickname</label>
-            <input type="text" id="nickname" name="nickname" {...register("nickname")} />
+                <label htmlFor="password">Password</label>
+                <input type="password" id="password" name="password" {...register("password")} />
 
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" {...register("password")} />
+                <label htmlFor="image">Image</label>
+                <input type="file" id="image" name="image" {...register("image")} />
 
-            <label htmlFor="image">Image</label>
-            <input type="file" id="image" name="image" {...register("image")} />
+                <label htmlFor="type">Type</label>
+                <input type="text" id="type" name="type" {...register("type")} />
 
-            <label htmlFor="type">Type</label>
-            <input type="text" id="type" name="type" {...register("type")} />
+                <label htmlFor="description">Description</label>
+                <input type="text" id="description" name="description" {...register("description")} />
 
-            <label htmlFor="description">Description</label>
-            <input type="text" id="description" name="description" {...register("description")} />
-
-            <button type="submit">Register</button>
-        </form>
+                <button type="submit">Register</button>
+            </form>
+        </section>
     )
 }
 
-export default Register
+export default Register;

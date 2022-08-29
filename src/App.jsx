@@ -9,40 +9,41 @@ import EditMascota from "./pages/EditMascota/EditMascota";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import { JwtContextProvider } from "./context/jwtContext";
+import RequireAuth from "./components/RequireAuth/RequireAuth";
 
 const App = () => {
-  return(
+  return (
     <JwtContextProvider>
-   <div>
-     <Router>
-       <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/mascotas" element={<Mascotas />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/newmascota" element={<NewMascota />} />
-          <Route path="/editmascota" element={<EditMascota />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+      <div>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/mascotas" element={<Mascotas />} />
+            <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
+            <Route path="/newmascota" element={<RequireAuth><NewMascota /></RequireAuth>} />
+            <Route path="/editmascota" element={<RequireAuth> <EditMascota /> </RequireAuth>} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
 
 
 
-        </Routes>
-                
-       
-       <Footer/>
+          </Routes>
 
-     </Router>
 
-   </div>
-   </JwtContextProvider>
+          <Footer />
+
+        </Router>
+
+      </div>
+    </JwtContextProvider>
 
 
   )
- 
-  
 
-  
+
+
+
 
 };
 
