@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import "./MascotaCard.css"
 
 
-const MascotaCard = ({ mascota }) => {
+const MascotaDetail = ({ mascota }) => {
     // const { mascota } = useContext(JwtContext);
     let navigate = useNavigate() 
 
@@ -29,11 +29,9 @@ const MascotaCard = ({ mascota }) => {
             <h3>Apodo: {mascota.nickname}</h3>
             <p>Tipo: {mascota.type}</p>
             <p>Descripción: {mascota.description}</p>
-            {mascota ? <><button onClick={() => editMascota(mascota)}>Edit</button>Delete  <button onClick={() => deleteMascota}>Delete</button></> : null}
-
-
+            
         </figure>
     )
 }
 
-export default MascotaCard;
+export default MascotaDetail;

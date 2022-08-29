@@ -19,7 +19,7 @@ const App = () => {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/mascotas" element={<Mascotas />} />
+            <Route path="/mascotas" element={<Mascotas />} />            
             <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
             <Route path="/newmascota" element={<RequireAuth><NewMascota /></RequireAuth>} />
             <Route path="/editmascota" element={<RequireAuth> <EditMascota /> </RequireAuth>} />

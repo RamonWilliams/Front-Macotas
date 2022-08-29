@@ -43,7 +43,8 @@ const Mascotas = () => {
             <div className="gallery">
 
 
-                {allMascotas.length ? setFilteredMascotas.map((mascota) => <MascotaCard mascota={mascota} key={mascota._id} />) : <p>Loading Mascota... </p>}
+                {allMascotas.length ? setFilteredMascotas.map((mascota) => <MascotaCard mascota={mascota}
+                 key={mascota._id} />) : <p>Loading Mascota... </p>}
 
             </div>
             
