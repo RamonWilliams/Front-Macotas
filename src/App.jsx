@@ -12,6 +12,7 @@ import { JwtContextProvider } from "./context/jwtContext";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
 import useLocalStorage from 'use-local-storage'
 
+
 const App = () => {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? '🌙' : '☀');
@@ -44,7 +45,7 @@ const App = () => {
           <Footer />
 
         </Router>
-
+    
       </div>
     </JwtContextProvider>
 

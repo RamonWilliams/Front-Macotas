@@ -21,7 +21,7 @@ html {
 
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #1e2336;
+    
 }
 
 h1,h2 {
@@ -35,7 +35,7 @@ p {
 }
  a {
     color: #f3ddedd6;
-    text-transform: uppercase;
+  
     font-weight: bold;
     font-size: 1.5rem;
 
@@ -58,11 +58,11 @@ button{
     background: transparent;
     color: rgb(24, 23, 21);
     font-size: 1.3rem;
-    background-color: wheat;
-    width: 6rem;
+    background-color: wheat;    
     border: 2px solid black;
     border-radius: 10px;
     cursor: pointer;
+    padding:0.4rem;
 }
 form{
     display: flex;
@@ -75,7 +75,8 @@ form{
  form label{
      font-size: 1.5rem;
  }
- :root {
+ /*------------------------------------*/
+:root {
   --background: white;
   --text-primary: black;
   --text-secondary: royalblue;
@@ -86,7 +87,7 @@ form{
   --background: black;
   --text-primary: white;
   --text-secondary: grey;
-  --accent: darkred;
+  --accent: rgb(141, 96, 96);
 }
 
 .App {
@@ -95,7 +96,7 @@ form{
   font-size: large;
   font-weight: bold;
   padding: 20px;
-  height: calc(100vh - 40px);
+ 
   transition: all .5s;
 }
 
