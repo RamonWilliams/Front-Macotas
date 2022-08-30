@@ -1,3 +1,5 @@
+
+
 import { useContext } from "react";
 import { JwtContext } from "../../context/jwtContext";
 import { useForm } from "react-hook-form";
@@ -7,8 +9,9 @@ import "./Login.css";
 import Swal from "sweetalert2";
 
 const Login = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState:{errors} } = useForm();
     let navigate = useNavigate();
+
     const { setJwt, setMascota } = useContext(JwtContext);
 
     const formSubmit = (formData) => {
@@ -33,15 +36,34 @@ const Login = () => {
                     type="text"
                     id="petname"
                     name="petname"
-                    {...register("petname")}
+                    placeholder="petname"
+                    {...register("petname",{
+                        required:{
+                            value: true,
+                            message: "Necesitas este campo"
+                        } 
+                    })} 
                 />
+                {errors.petname && <span>{errors.petname.message}</span>}               
+
                 <label htmlFor="password">Password</label>
                 <input
                     type="password"
                     id="password"
                     name="password"
-                    {...register("password")}
+                    {...register("password",{
+                        required:{
+                            value:true,
+                            message:"Nesecitas este campo"
+                        },
+                        minLength: {
+                            value: 6,
+                            message: "La contraseña debe tener al menos 6 caracteres"
+                          },
+                        
+                    })}
                 />
+                   {errors.password &&  <span>{errors.password.message}</span>}
                 <button type="submit">Login</button>
             </form>
         </section>

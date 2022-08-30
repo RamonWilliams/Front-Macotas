@@ -12,9 +12,13 @@ import { JwtContextProvider } from "./context/jwtContext";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
 
 const App = () => {
+  
+  
   return (
     <JwtContextProvider>
-      <div>
+      <div className="App">
+        
+
         <Router>
           <Header />
           <Routes>

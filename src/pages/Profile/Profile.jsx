@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { JwtContext } from "../../context/jwtContext";
 import { API } from "../../services/API";
@@ -8,8 +9,9 @@ import "./Profile.css";
 
 
 const Profile = () => {
+   
     const { mascota, logout } = useContext(JwtContext);
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit,formState:{errors} } = useForm();
     let navigate = useNavigate();
     
    
@@ -70,20 +72,36 @@ const Profile = () => {
     return (
         <section className="profile">
             <h2>Profile</h2>
-            <img src={mascota.image} alt="Mascota image" />
-
+            <div className="image">
+            <img src={mascota.image} alt="Logo" />
+            </div>
             <form onSubmit={handleSubmit(formSubmit)}>
                 <label htmlFor="petname">Edit Petname</label>
-                <input type="text" id="petname" name="petname" {...register("petname")}
-                 defaultValue={defaultValues.petname}/>
+                <input type="text" id="petname" name="petname" {...register("petname" ,{
+                        required:{
+                            value: true,
+                            message: "Necesitas este campo"
+                        } 
+                    })}
+                 defaultValue={defaultValues.petname} required/>
                 
                 <label htmlFor="image">Change your Image</label>
-                <input type="file" id="image" name="image" {...register("image")} />
+                <input type="file" id="image" name="image" {...register("image",{
+                    required:{
+                        value:true,
+                        message:"Necesitas este campo"
+                    }
+                })} />
                
 
                   
                 <label htmlFor="type"> Change Type</label>
-                <input type="text" id="type" name="type" {...register("type")}/>
+                <input type="text" id="type" name="type" {...register("type",{
+                    required:{
+                        value:true,
+                        message:"Necesitas este campo"
+                    }
+                })} required/>
                  
                 {mascota?(  <>  <button type="submit"> Edit </button>
                 <button type="button" onClick={()=>deleteMascota(mascota)}>Delete</button>
