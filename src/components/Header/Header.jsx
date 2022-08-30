@@ -18,9 +18,11 @@ const Header = () => {
                     <li>
                         <Link to="/">Home</Link>
                     </li>
-                    <li>
+                    {mascota?
+                     (<> <li>
                         <Link to="/mascotas">Pets</Link>
-                    </li>
+                    </li> </>
+                    ) : null} 
                     {mascota ? (
                         <>
 
@@ -36,8 +38,9 @@ const Header = () => {
                             {mascota.image !== "undefined" ? (                                
                                 <img src={mascota?.image} alt="Mascota Image" />
                                 ) : null}
-
+                              <div>
                             <button onClick={() => logout() & navigate("/")}>Logout</button>
+                            </div>
                             </>
                     ) : (
                         <ul className="botones">
@@ -50,10 +53,10 @@ const Header = () => {
                         </ul>
                     )}
                 </div>
-            </nav>
-            <div className="title-image">
+            </nav> {!mascota? (<div className="title-image">
                 <img src="https://cdn.pixabay.com/photo/2017/04/11/15/55/animals-2222007_1280.jpg" alt="photo" />
-            </div>
+            </div>):("")}
+           
         </header>
     );
 };

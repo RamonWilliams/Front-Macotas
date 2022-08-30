@@ -34,7 +34,7 @@ p {
  a {
   color: #00b5d8;  
     font-weight: bold;
-    font-size: 2.0rem;
+    font-size: 2.3rem;
 
 }
 
@@ -58,15 +58,14 @@ button{
     background-color: wheat;    
     border: 2px solid black;
     border-radius: 10px;
-    cursor: pointer;
-    padding:0.4rem;
+    cursor: pointer;    
     font-family: monospace;
 }
 form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 2px solid white;
+    
     gap: 0.3rem;
     align-items: center;
 }
@@ -112,8 +111,15 @@ button {
 }
 .App button:hover{
   transform: scale(1.1);
+  font-weight: bold;
 }
- 
+@media (max-width: 992px){
+  .App button{
+    font-size: 18px;
+ }
+ input{
+   font-size: 18px;
+}
 @media(max-width: 768px){
 
   .App button{
@@ -134,5 +140,5 @@ button {
   
 }
 
-
+}
 

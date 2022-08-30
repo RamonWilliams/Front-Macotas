@@ -17,7 +17,7 @@ const Home = () => {
           personas otro tipo de preocupaciones, evita la depresión y nos hace sentir útiles.
         </p>
 
-        <Link to="/login">Do you have an account?</Link>
+        <Link to="/login"> Do you have an account? </Link>
       </div>
     </section>
 

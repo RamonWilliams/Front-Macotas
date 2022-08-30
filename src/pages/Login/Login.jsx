@@ -22,21 +22,21 @@ const Login = () => {
             setMascota(res.data.mascotaInDb);
             if (res.data.token) {
                 navigate("/");
-                Swal.fire("Bienvenido a la web, ya puedes crear y editar mascotas")
+                Swal.fire("Welcome to the Pets Shop, now you can create and modify your pet")
             }
         });
     };
 
     return (
         <section className="login">
-            <h2>Please log in:</h2>
-            <form onSubmit={handleSubmit(formSubmit)}>
+            <h2>Please Login</h2>
+            <form onSubmit={handleSubmit(formSubmit)} className="formulario">
                 <label htmlFor="petname">Petname</label>
                 <input
                     type="text"
                     id="petname"
                     name="petname"
-                    placeholder="petname"
+                    placeholder=" Write your petname"
                     {...register("petname",{
                         required:{
                             value: true,
@@ -51,6 +51,7 @@ const Login = () => {
                     type="password"
                     id="password"
                     name="password"
+                    placeholder="Write your password"
                     {...register("password",{
                         required:{
                             value:true,
@@ -64,7 +65,7 @@ const Login = () => {
                     })}
                 />
                    {errors.password &&  <span>{errors.password.message}</span>}
-                <button type="submit">Login</button>
+                <button type="submit" className="lbutton">Login</button>
             </form>
         </section>
     );

@@ -27,9 +27,12 @@ const Profile = () => {
         }).then((result) => {
             if (result.isConfirmed) {
               API.delete( `/mascota/${mascota._id}`).then((res) => {
-               
-                  navigate("/");
-                  Swal.fire("Mascota eliminada");
+                logout();
+                if (res) {
+                    navigate("/");
+                  Swal.fire("Pet deleted");
+                }
+                  
                 })
               };
 
@@ -43,9 +46,7 @@ const Profile = () => {
         nickname: mascota.nickname,
         image:mascota.image,
         type: mascota.type,
-        description: mascota.description  }  
-   
-   
+        description: mascota.description  }   
    
    
    
@@ -71,13 +72,13 @@ const Profile = () => {
 
     return (
         <section className="profile">
-            <h2>Profile</h2>
+          
             <div className="image">
             <img src={mascota.image} alt="Logo" />
             </div>
-            <form onSubmit={handleSubmit(formSubmit)}>
+            <form onSubmit={handleSubmit(formSubmit)} className="perfilFormulario">
                 <label htmlFor="petname">Edit Petname</label>
-                <input type="text" id="petname" name="petname" {...register("petname" ,{
+                <input type="text" id="petname" name="petname" placeholder="Write your petname"{...register("petname" ,{
                         required:{
                             value: true,
                             message: "Necesitas este campo"
@@ -87,18 +88,18 @@ const Profile = () => {
                   {errors.petname && <span>{errors.petname.message}</span>}  
                  
                   <label htmlFor ="nickname"> Nickname </label>
-               <input type="text" id="nickname" name="nickname" {...register("nickname" ,{
+               <input type="text" id="nickname" name="nickname" placeholder="Write your nickname " {...register("nickname" ,{
                         required:{
                             value: true,
                             message: "Necesitas este campo"
                         } 
                     })}
-                 defaultValue={defaultValues.petname} required/>
+                 defaultValue={defaultValues.petname} />
                   {errors.nickname && <span>{errors.nickname.message}</span>}  
 
                 
                 <label htmlFor="image">Change your Image</label>
-                <input type="file" id="image" name="image" {...register("image",{
+                <input type="file" id="image" name="image" placeholder="Enter an image" {...register("image",{
                     required:{
                         value:true,
                         message:"Necesitas este campo"
@@ -107,7 +108,7 @@ const Profile = () => {
                 {errors.image && <span>{errors.image.message}</span>}  
                   
                 <label htmlFor="type"> Change Type</label>
-                <input type="text" id="type" name="type" {...register("type",{
+                <input type="text" id="type" name="type" placeholder="Write a type"{...register("type",{
                     required:{
                         value:true,
                         message:"Necesitas este campo"
@@ -117,7 +118,7 @@ const Profile = () => {
 
 
                <label htmlFor="description">Change your description</label>
-                <input type="text" id="description" name="description" {...register("description",{
+                <input type="text" id="description" name="description" placeholder="Write a description" {...register("description",{
                     required:{
                         value:true,
                         message:"Necesitas este campo"
