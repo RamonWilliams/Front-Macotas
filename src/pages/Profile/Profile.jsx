@@ -83,7 +83,18 @@ const Profile = () => {
                             message: "Necesitas este campo"
                         } 
                     })}
+                 defaultValue={defaultValues.petname} />
+                  {errors.petname && <span>{errors.petname.message}</span>}  
+
+               <input type="text" id="nickname" name="nickname" {...register("nickname" ,{
+                        required:{
+                            value: true,
+                            message: "Necesitas este campo"
+                        } 
+                    })}
                  defaultValue={defaultValues.petname} required/>
+                  {errors.nickname && <span>{errors.nickname.message}</span>}  
+
                 
                 <label htmlFor="image">Change your Image</label>
                 <input type="file" id="image" name="image" {...register("image",{
@@ -91,9 +102,8 @@ const Profile = () => {
                         value:true,
                         message:"Necesitas este campo"
                     }
-                })} />
-               
-
+                })} />                
+                {errors.image && <span>{errors.image.message}</span>}  
                   
                 <label htmlFor="type"> Change Type</label>
                 <input type="text" id="type" name="type" {...register("type",{
@@ -101,9 +111,20 @@ const Profile = () => {
                         value:true,
                         message:"Necesitas este campo"
                     }
-                })} required/>
+                })} />
+                 {errors.type && <span>{errors.type.message}</span>}  
+
+
+               <label htmlFor="description">Change your description</label>
+                <input type="text" id="description" name="description" {...register("description",{
+                    required:{
+                        value:true,
+                        message:"Necesitas este campo"
+                    }
+                })} />
+                 {errors.description && <span>{errors.description.message}</span>}  
                  
-                {mascota?(  <>  <button type="submit"> Edit </button>
+                {mascota?( <> <button type="submit"> Edit </button>
                 <button type="button" onClick={()=>deleteMascota(mascota)}>Delete</button>
                 </>): null}
                
