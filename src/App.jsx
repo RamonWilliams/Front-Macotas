@@ -25,7 +25,7 @@ const App = () => {
   return (
     <JwtContextProvider>
       <div className="App" data-theme={theme}>
-      <button className="mode" onClick={switchTheme}>Mode {theme === '☀' ? '🌙' : '☀'} </button>
+      <button className="mode" onClick={switchTheme}> {theme === 'light' ? '🌙' : '🕶'} </button>
 
         <Router>
 

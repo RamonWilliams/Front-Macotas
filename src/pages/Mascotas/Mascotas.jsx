@@ -36,7 +36,7 @@ const Mascotas = () => {
     return (
         <section className="main">
 
-            <h2>Buscador de Mascotas</h2>
+            <h2>Pet finder </h2>
             <Search setFilterWord={setFilterWord} />
 
 

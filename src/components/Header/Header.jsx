@@ -10,15 +10,16 @@ const Header = () => {
     return (
 
         <header>
-            <h1>Mis Mascotas</h1>
+            <h1> Pets Shop</h1>
+           
             <nav>
-                <img src="https://images-ext-2.discordapp.net/external/Frz1bbdfy4ji9y7uwoYBtx7SwGUL5kPxPnM0Q7aly1U/%3Fw%3D2000/https/img.freepik.com/vector-premium/lindo-logo-tienda-mascotas-gato-perro_454510-133.jpg?width=702&height=702" alt="logo" />
+             
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/mascotas">Mascotas</Link>
+                        <Link to="/mascotas">Pets</Link>
                     </li>
                     {mascota ? (
                         <>
@@ -50,6 +51,9 @@ const Header = () => {
                     )}
                 </div>
             </nav>
+            <div className="title-image">
+                <img src="https://cdn.pixabay.com/photo/2017/04/11/15/55/animals-2222007_1280.jpg" alt="photo" />
+            </div>
         </header>
     );
 };

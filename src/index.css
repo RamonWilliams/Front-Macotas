@@ -24,30 +24,29 @@ body {
     
 }
 
-h1,h2 {
+h2 {
     color: #ffb637;
 }
 h2{
     font-size: 2rem;
 }
 p {
-    color: #ffb637;
+    color: #00b5d8;
 }
  a {
-    color: #f3ddedd6;
-  
+  color: #00b5d8;  
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2.0rem;
 
 }
 
  a:hover {
     cursor: pointer;
-    color: #fca819;
+   
 }
 input{
     width: 16rem;
-    font-size: 16px;
+    font-size: 20px;
 }
 label{
     color: rgb(234, 237, 240);
@@ -63,6 +62,7 @@ button{
     border-radius: 10px;
     cursor: pointer;
     padding:0.4rem;
+    font-family: monospace;
 }
 form{
     display: flex;
@@ -96,7 +96,7 @@ form{
   font-size: large;
   font-weight: bold;
   padding: 20px;
- 
+ min-height: 100vh;
   transition: all .5s;
 }
 
@@ -107,4 +107,34 @@ button {
   float: right;
   transition: all .5s;
 }
+.App button{
+  transition: all 0.3s ease-in-out;
+  border: none;
+  
+}
+.App button:hover{
+  transform: scale(1.1);
+}
  
+@media(max-width: 768px){
+
+  .App button{
+     font-size: 16px;
+  }
+  input{
+    font-size: 16px;
+}
+}
+@media(max-width: 576px){
+
+  .App button{
+     font-size: 13px;
+  }
+  input{
+    font-size: 14px;
+}
+  
+}
+
+
+
