@@ -85,7 +85,8 @@ const Profile = () => {
                     })}
                  defaultValue={defaultValues.petname} />
                   {errors.petname && <span>{errors.petname.message}</span>}  
-
+                 
+                  <label htmlFor ="nickname"> Nickname </label>
                <input type="text" id="nickname" name="nickname" {...register("nickname" ,{
                         required:{
                             value: true,

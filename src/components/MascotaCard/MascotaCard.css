@@ -40,7 +40,9 @@
 
 
 @media(max-width: 768px){
-    
+    .card h2{
+        width: 200px;
+    }
 }
 
 
