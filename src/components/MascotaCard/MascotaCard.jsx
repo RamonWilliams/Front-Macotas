@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import "./MascotaCard.css"
 
 
@@ -8,16 +9,13 @@ const MascotaCard = ({ mascota }) => {
 
 
     return (
-        <figure className="card">
+         <Link to={`/mascota/${mascota._id}`}>
+       
             <div className="pet-image">
                 <img src={mascota.image} alt={mascota.petname} />
             </div>
-            <h2>Nombre: {mascota.petname}</h2>
-            <h3>Apodo: {mascota.nickname}</h3>
-            <p>Tipo: {mascota.type}</p>
-            <p>Descripción: {mascota.description}</p>
-            
-        </figure>
+           
+        </Link>
     )
 }
 

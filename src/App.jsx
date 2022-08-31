@@ -9,6 +9,7 @@ import Login from "./pages/Login/Login";
 import { JwtContextProvider } from "./context/jwtContext";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
 import useLocalStorage from 'use-local-storage'
+import MascotaDetail from "./pages/MascotaDetail/MascotaDetail";
 
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />                      
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />             
+            <Route path= "/mascota/:id" element={<MascotaDetail />} /> 
            </Routes>
 
 

@@ -36,21 +36,17 @@ const Mascotas = () => {
     return (
         <section className="main">
 
-            <h2 className="h2">Search by... </h2>
-            <Search setFilterWord={setFilterWord} />
+        <h2 className="h2">Search by... </h2>
+        <Search setFilterWord={setFilterWord} />
+        <div className="gallery">
+            {allMascotas.length ? setFilteredMascotas.map((mascota) => <MascotaCard mascota={mascota}
+             />) : <p>Loading Mascota... </p>}
+
+        </div>
+        
 
 
-            <div className="gallery">
-
-
-                {allMascotas.length ? setFilteredMascotas.map((mascota) => <MascotaCard mascota={mascota}
-                 key={mascota._id} />) : <p>Loading Mascota... </p>}
-
-            </div>
-            
-
-
-        </section>
+    </section>
     )
 }
 
